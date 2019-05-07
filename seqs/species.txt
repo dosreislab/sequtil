@@ -1,0 +1,8 @@
+P_troglodytes
+P_paniscus
+P_pygmaeus
+P_abelii
+G_gorilla
+H_neanderthalensis
+H_sapiens
+H_altai
