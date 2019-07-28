@@ -16,7 +16,7 @@ There are a few examples below, which assume you are a knowledgeable Unix user.
 
 ```Bash
 # 8 sequences per gene
-nseqs.sh seqs/*.aln.fco
+bashseq/nseqs.sh seqs/*.aln.fco
 ```
 
 ## PerlSeq
