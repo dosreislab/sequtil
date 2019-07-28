@@ -8,23 +8,34 @@ the need for installing any libraries or additional scripts.
 These scripts were written a while ago and not all of them have been fully
 tested.
 
-Directory `seqs/` contains sequences for running the examples below.
+There are a few examples below, which assume you are a knowledgeable Unix user.
 
-## Examples
+## BashSeq
 
-### BashSeq
+* nseqs.sh: Count the number of sequences in one or more fastA files.
 
 ```Bash
-# nseqs.sh: Count the number of sequences in one or more fastA files.
 # 8 sequences per gene
-nseqs.sh *.aln.fco
+nseqs.sh seqs/*.aln.fco
 ```
 
 ## PerlSeq
 
-```Bash
-# format-pretty-aln.pl: Useful for quickly visualising alignments on the
-# terminal. The option 'co' is suitable for codon alignments.
+* fasta2*.pl: several scripts to convert from fastA into other sequence formats.
 
-format-pretty-aln.pl co <ND1.aln.fco | less -S
+```Bash
+# Prepare a file with sequence name labels
+> grep '>' seqs/ND1.aln.fco | sed 's/^>//' > seqs/labels.txt
+# Convert fasta to phylip sequential
+> perlseq/fasta2phys.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
+# Convert fasta to phylip interleaved
+> perlseq/fasta2phyi.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
+```
+
+* format-pretty-aln.pl: Useful for quickly visualising alignments on the
+terminal. Option 'co' is suitable for codon alignments.
+
+```Bash
+# view codon alignment on the terminal
+> perlseq/format-pretty-aln.pl co < seqs/ND1.aln.fco | less -S
 ```
