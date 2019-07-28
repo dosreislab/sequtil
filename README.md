@@ -25,11 +25,11 @@ bashseq/nseqs.sh seqs/*.aln.fco
 
 ```Bash
 # Prepare a file with sequence name labels
-> grep '>' seqs/ND1.aln.fco | sed 's/^>//' > seqs/labels.txt
+grep '>' seqs/ND1.aln.fco | sed 's/^>//' > seqs/labels.txt
 # Convert fasta to phylip sequential
-> perlseq/fasta2phys.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
+perlseq/fasta2phys.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
 # Convert fasta to phylip interleaved
-> perlseq/fasta2phyi.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
+perlseq/fasta2phyi.pl seqs/labels.txt < seqs/ND1.aln.fco | less -S
 ```
 
 * format-pretty-aln.pl: Useful for quickly visualising alignments on the
@@ -37,5 +37,5 @@ terminal. Option 'co' is suitable for codon alignments.
 
 ```Bash
 # view codon alignment on the terminal
-> perlseq/format-pretty-aln.pl co < seqs/ND1.aln.fco | less -S
+perlseq/format-pretty-aln.pl co < seqs/ND1.aln.fco | less -S
 ```
